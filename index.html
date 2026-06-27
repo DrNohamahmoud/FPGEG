@@ -1020,14 +1020,14 @@ nav {
     <div class="stat-grid">
       <div class="stat-card reveal"><div class="stat-num">85%</div><div class="stat-label">رضا المشاركين</div></div>
       <div class="stat-card reveal"><div class="stat-num">12K+</div><div class="stat-label">ساعة تطوع</div></div>
-      <div class="stat-card reveal"><div class="stat-num">50</div><div class="stat-label">حدث توعوي</div></div>
-      <div class="stat-card reveal"><div class="stat-num">95%</div><div class="stat-label">معدل الإكمال</div></div>
+      <div class="stat-card reveal"><div class="stat-num">500+</div><div class="stat-label">مشروع بيئي</div></div>
+      <div class="stat-card reveal"><div class="stat-num">25K</div><div class="stat-label">مستفيد مباشر</div></div>
     </div>
 
     <div class="info-grid">
       <div class="info-card reveal">
         <span class="card-icon">📈</span>
-        <h3>النمو والتطور</h3>
+        <h3>النمو المستدام</h3>
         <p>ارتفاع ملحوظ في مستويات الوعي البيئي والمشاركة في البرامج والأنشطة المستدامة.</p>
       </div>
       <div class="info-card reveal">
@@ -1068,8 +1068,8 @@ nav {
         </div>
         <p>عرض شامل يغطي أهداف المبادرة والمراحل والإنجازات والخطط المستقبلية.</p>
         <div class="file-actions">
-          <button class="btn-file">تحميل</button>
-          <button class="btn-file focus-btn">معاينة</button>
+          <button class="btn-file" onclick="loadPresentation('https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000')">تحميل</button>
+          <button class="btn-file focus-btn" onclick="openFocusModal('https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000')">معاينة</button>
         </div>
       </div>
 
@@ -1077,12 +1077,12 @@ nav {
       <div class="file-card reveal">
         <div class="file-card-header">
           <div class="file-icon doc">📄</div>
-          <h3>دليل التطبيق</h3>
+          <h3>دليل المعلم</h3>
         </div>
         <p>دليل تفصيلي خطوة بخطوة لتطبيق برنامج المدارس الخضراء في المؤسسات التعليمية.</p>
         <div class="file-actions">
-          <button class="btn-file">تحميل</button>
-          <button class="btn-file focus-btn">قراءة</button>
+          <button class="btn-file" onclick="window.open('https://drive.google.com/file/d/10qHKyWrARLWl0wrpqXvbj2WnjDIiDmCY/view?usp=sharing')">تحميل</button>
+          <button class="btn-file focus-btn" onclick="window.open('https://drive.google.com/file/d/10qHKyWrARLWl0wrpqXvbj2WnjDIiDmCY/view?usp=sharing')">قراءة</button>
         </div>
       </div>
 
@@ -1137,157 +1137,159 @@ nav {
 
 <!-- FOCUS MODAL -->
 <div id="focus-modal">
-  <iframe id="focus-iframe" src=""></iframe>
+  <iframe id="focus-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   <button class="focus-close" onclick="closeFocusModal()">إغلاق</button>
 </div>
 
 <script>
-// Particles Background
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
+// ═══════════════════════════════════════════════════════════════════
+// Section Navigation
+// ═══════════════════════════════════════════════════════════════════
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-const particleCount = 50;
-
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.vx = (Math.random() - 0.5) * 2;
-    this.vy = (Math.random() - 0.5) * 2;
-    this.radius = Math.random() * 1.5 + 0.5;
-    this.color = ['#38bdf8', '#34d399', '#f0c040'][Math.floor(Math.random() * 3)];
-  }
-
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-  }
-
-  draw() {
-    ctx.fillStyle = this.color;
-    ctx.globalAlpha = 0.6;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.globalAlpha = 1;
-  }
-}
-
-function initParticles() {
-  particles = [];
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-}
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
-  });
-  requestAnimationFrame(animateParticles);
-}
-
-initParticles();
-animateParticles();
-
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-
-// Navigation Functions
 function showSection(sectionId) {
-  // Hide all sections
-  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-  // Show selected section
-  document.getElementById(sectionId).classList.add('active');
-  // Update nav links
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  event.target.classList.add('active');
-  window.scrollTo(0, 0);
+  const sections = document.querySelectorAll('.content-section');
+  sections.forEach(section => section.classList.remove('active'));
+  
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) {
+    targetSection.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    updateNavLinks(sectionId);
+  }
 }
 
-// Tab Switching
-function switchTab(btn, tabId) {
-  // Hide all tabs
-  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
-  // Show selected tab
-  document.getElementById(tabId).style.display = 'block';
-  // Update button states
-  btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+function updateNavLinks(activeId) {
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => link.classList.remove('active'));
+  const activeLink = document.querySelector(`.nav-links a[onclick*="'${activeId}'"]`);
+  if (activeLink) activeLink.classList.add('active');
 }
 
+// ═══════════════════════════════════════════════════════════════════
+// Fullscreen Toggle
+// ═══════════════════════════════════════════════════════════════════
+
+function toggleFS() {
+  const elem = document.documentElement;
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen?.() || elem.mozRequestFullScreen?.() || elem.webkitRequestFullscreen?.() || elem.msRequestFullscreen?.();
+  } else {
+    document.exitFullscreen?.() || document.mozCancelFullScreen?.() || document.webkitExitFullscreen?.() || document.msExitFullscreen?.();
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
 // Image Modal
+// ═══════════════════════════════════════════════════════════════════
+
 function openImgModal(card) {
-  const img = card.querySelector('img');
+  const imgSrc = card.querySelector('img')?.src || '';
+  const imgName = card.dataset.name || '';
   const modal = document.getElementById('img-modal');
   const modalImg = document.getElementById('modal-img');
-  modalImg.src = img.src;
-  modal.classList.add('open');
+  
+  if (imgSrc) {
+    modalImg.src = imgSrc;
+    modalImg.alt = imgName;
+    modal.classList.add('open');
+  }
 }
 
 function closeImgModal() {
   document.getElementById('img-modal').classList.remove('open');
 }
 
-// Focus Modal for Videos
-function openFocusModal(src) {
+document.getElementById('img-modal')?.addEventListener('click', function(e) {
+  if (e.target === this) closeImgModal();
+});
+
+// ═══════════════════════════════════════════════════════════════════
+// Focus Modal
+// ═══════════════════════════════════════════════════════════════════
+
+function openFocusModal(url) {
   const modal = document.getElementById('focus-modal');
   const iframe = document.getElementById('focus-iframe');
-  iframe.src = src;
+  iframe.src = url;
   modal.classList.add('open');
 }
 
 function closeFocusModal() {
   const modal = document.getElementById('focus-modal');
   const iframe = document.getElementById('focus-iframe');
-  iframe.src = '';
   modal.classList.remove('open');
+  iframe.src = '';
 }
 
-// Load Video in Preview
-function loadVideo(src) {
-  const preview = document.getElementById('videoPreview');
-  preview.innerHTML = '<iframe style="width:100%; height:100%; border:none; border-radius:12px;" src="' + src + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+// ═══════════════════════════════════════════════════════════════════
+// Video & Presentation Loaders
+// ═══════════════════════════════════════════════════════════════════
+
+function loadVideo(url) {
+  const previewArea = document.getElementById('videoPreview');
+  previewArea.innerHTML = `<iframe width="100%" height="100%" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 }
 
-// Fullscreen Button
-function toggleFS() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    document.exitFullscreen();
+function loadPresentation(url) {
+  const previewArea = document.querySelector('.preview-area');
+  if (previewArea) {
+    previewArea.innerHTML = `<iframe width="100%" height="100%" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
   }
 }
 
+// ═══════════════════════════════════════════════════════════════════
+// Tab Navigation
+// ═══════════════════════════════════════════════════════════════════
+
+function switchTab(btn, tabId) {
+  const tabContents = btn.parentElement.parentElement.querySelectorAll('.tab-content');
+  tabContents.forEach(content => content.style.display = 'none');
+  document.getElementById(tabId).style.display = 'block';
+  
+  const buttons = btn.parentElement.querySelectorAll('.tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════════════════════
 // Scroll Reveal Animation
-const reveals = document.querySelectorAll('.reveal');
+// ═══════════════════════════════════════════════════════════════════
+
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, observerOptions);
 
-reveals.forEach(r => observer.observe(r));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Close modals on click outside
-document.getElementById('img-modal').addEventListener('click', (e) => {
-  if (e.target.id === 'img-modal') closeImgModal();
-});
+// ═══════════════════════════════════════════════════════════════════
+// Canvas Particles (Optional Enhancement)
+// ═══════════════════════════════════════════════════════════════════
 
-document.getElementById('focus-modal').addEventListener('click', (e) => {
-  if (e.target.id === 'focus-modal') closeFocusModal();
+const canvas = document.getElementById('bg-canvas');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+}
+
+// Prevent default scroll behavior for page loading
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
 });
 </script>
 
