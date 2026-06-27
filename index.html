@@ -703,6 +703,40 @@ nav {
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* video container */
+.video-container {
+  background: var(--card-bg);
+  border: 1px solid rgba(56,189,248,0.16);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.video-container h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sky);
+  margin-bottom: 16px;
+  text-align: center;
+}
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   nav { padding: 0 14px; }
@@ -782,7 +816,7 @@ nav {
       <div class="hero-badge">🌱 مبادرة تربوية بيئية متكاملة</div>
       <h1 class="hero-title">وعي تربوي أخضر</h1>
       <p class="hero-sub">
-        مبادرة تهدف إلى بناء ثقافة بيئية متجذرة في منظومتنا التعليمية، من خلال تضمين القيم الخضراء في الممارسات التربوية والإدارية.
+        مبادرة تهدف إلى بناء ثقافة بيئية متجذرة في منظومتنا التعليمية، من خلال تضمين القيم الخضراء في الممارسات اليومية.
       </p>
 
       <!-- Quick links -->
@@ -846,6 +880,14 @@ nav {
       <span class="section-icon">🏛️</span>
       <h1>الجامعة الخضراء</h1>
       <p>مسيرة جامعتنا نحو الاستدامة البيئية وتطبيق معايير الجامعات الخضراء على المستوى المحلي والدولي.</p>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-container reveal">
+      <h3>🎬 فيديو الجامعة الخضراء</h3>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/uS6WHS9S02s?start=6" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </div>
 
     <div class="info-grid">
@@ -1014,31 +1056,24 @@ nav {
     <div class="section-hero-bar">
       <span class="section-icon">📊</span>
       <h1>مؤشرات بيئية</h1>
-      <p>مقاييس ومعايير تقيس مدى تقدم المبادرة وتأثيرها على الوعي البيئي والممارسات المستدامة.</p>
-    </div>
-
-    <div class="stat-grid">
-      <div class="stat-card reveal"><div class="stat-num">85%</div><div class="stat-label">رضا المشاركين</div></div>
-      <div class="stat-card reveal"><div class="stat-num">12K+</div><div class="stat-label">ساعة تطوع</div></div>
-      <div class="stat-card reveal"><div class="stat-num">500+</div><div class="stat-label">مشروع بيئي</div></div>
-      <div class="stat-card reveal"><div class="stat-num">25K</div><div class="stat-label">مستفيد مباشر</div></div>
+      <p>مقاييس تقدم الأهداف البيئية ومؤشرات النجاح في تحقيق الاستدامة.</p>
     </div>
 
     <div class="info-grid">
       <div class="info-card reveal">
+        <span class="card-icon">🌍</span>
+        <h3>الانبعاثات الكربونية</h3>
+        <p>تقليل الانبعاثات الكربونية بمعدل 25% من خلال استخدام وسائل نقل صديقة للبيئة.</p>
+      </div>
+      <div class="info-card reveal">
         <span class="card-icon">📈</span>
-        <h3>النمو المستدام</h3>
-        <p>ارتفاع ملحوظ في مستويات الوعي البيئي والمشاركة في البرامج والأنشطة المستدامة.</p>
+        <h3>معدل إعادة التدوير</h3>
+        <p>زيادة معدل إعادة التدوير إلى 60% من إجمالي النفايات بحلول 2026.</p>
       </div>
       <div class="info-card reveal">
-        <span class="card-icon">🎯</span>
-        <h3>تحقيق الأهداف</h3>
-        <p>تحقيق 95% من أهدافنا السنوية في التوعية والتطبيق والتقييم والاستدامة.</p>
-      </div>
-      <div class="info-card reveal">
-        <span class="card-icon">🌐</span>
-        <h3>التأثير المجتمعي</h3>
-        <p>انتشار المبادرة إلى 250+ مدرسة وتأثيرها على آلاف الطلاب والمعلمين والأسر.</p>
+        <span class="card-icon">💚</span>
+        <h3>الوعي البيئي</h3>
+        <p>تحقيق نسبة 80% من الطلاب والموظفين الذين لديهم وعي بيئي عالي.</p>
       </div>
     </div>
 
@@ -1056,241 +1091,188 @@ nav {
     <div class="section-hero-bar">
       <span class="section-icon">📁</span>
       <h1>الموارد والملفات</h1>
-      <p>مجموعة شاملة من المواد التعليمية والمرجعية والفيديوهات التوضيحية لدعم المبادرة.</p>
+      <p>مجموعة من الموارد التعليمية والملفات الداعمة للمبادرة.</p>
     </div>
 
     <div class="files-grid">
-      <!-- File 1: PowerPoint -->
       <div class="file-card reveal">
         <div class="file-card-header">
           <div class="file-icon ppt">📊</div>
-          <h3>عرض تقديمي للمبادرة</h3>
+          <h3>العرض التقديمي للمبادرة</h3>
         </div>
-        <p>عرض شامل يغطي أهداف المبادرة والمراحل والإنجازات والخطط المستقبلية.</p>
+        <p>عرض تقديمي شامل يوضح أهداف وأنشطة المبادرة الخضراء.</p>
         <div class="file-actions">
-          <button class="btn-file" onclick="loadPresentation('https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000')">تحميل</button>
-          <button class="btn-file focus-btn" onclick="openFocusModal('https://docs.google.com/presentation/d/13lMgtRCbJOmCCY8PdlNgWKlr11Pq_OiO/embed?start=false&loop=false&delayms=3000')">معاينة</button>
+          <button class="btn-file focus-btn" onclick="alert('يمكنك تحميل الملف من المستودع')">📥 تحميل</button>
         </div>
       </div>
 
-      <!-- File 2: Document -->
       <div class="file-card reveal">
         <div class="file-card-header">
           <div class="file-icon doc">📄</div>
           <h3>دليل المعلم</h3>
         </div>
-        <p>دليل تفصيلي خطوة بخطوة لتطبيق برنامج المدارس الخضراء في المؤسسات التعليمية.</p>
+        <p>دليل شامل للمعلمين يشرح كيفية تطبيق المناهج الخضراء.</p>
         <div class="file-actions">
-          <button class="btn-file" onclick="window.open('https://drive.google.com/file/d/10qHKyWrARLWl0wrpqXvbj2WnjDIiDmCY/view?usp=sharing')">تحميل</button>
-          <button class="btn-file focus-btn" onclick="window.open('https://drive.google.com/file/d/10qHKyWrARLWl0wrpqXvbj2WnjDIiDmCY/view?usp=sharing')">قراءة</button>
+          <button class="btn-file focus-btn" onclick="alert('يمكنك تحميل الملف من المستودع')">📥 تحميل</button>
         </div>
       </div>
 
-      <!-- File 3: Video -->
       <div class="file-card reveal">
         <div class="file-card-header">
-          <div class="file-icon vid">🎥</div>
-          <h3>فيديو تعليمي مختصر</h3>
+          <div class="file-icon vid">🎬</div>
+          <h3>مقاطع فيديو تعليمية</h3>
         </div>
-        <p>فيديو توضيحي يشرح أهمية التربية البيئية والدور الذي تلعبه في بناء المستقبل.</p>
+        <p>مجموعة من الفيديوهات التعليمية حول الممارسات البيئية.</p>
         <div class="file-actions">
-          <button class="btn-file" onclick="loadVideo('https://www.youtube.com/embed/nTYJp6yLYdU')">مشاهدة الفيديو</button>
-          <button class="btn-file focus-btn" onclick="openFocusModal('https://www.youtube.com/embed/nTYJp6yLYdU')">ملء الشاشة</button>
-        </div>
-        <div class="preview-area" id="videoPreview">
-          <div class="preview-placeholder">
-            <div class="pi">🎬</div>
-            <p>اضغط "مشاهدة الفيديو" لتشغيل الفيديو</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- File 4: Information -->
-      <div class="file-card reveal">
-        <div class="file-card-header">
-          <div class="file-icon inf">ℹ️</div>
-          <h3>معلومات مفيدة</h3>
-        </div>
-        <p>مجموعة من المراجع والروابط المهمة حول الاستدامة والتربية البيئية العالمية.</p>
-        <div class="file-actions">
-          <button class="btn-file">عرض</button>
-          <button class="btn-file focus-btn">تحميل</button>
+          <button class="btn-file" onclick="showSection('green-uni')">▶️ مشاهدة</button>
         </div>
       </div>
     </div>
 
     <div class="section-nav">
-      <button class="snav-btn" onclick="showSection('home')">التالي ←</button>
       <button class="snav-btn home" onclick="showSection('home')">🏠 البداية</button>
       <button class="snav-btn" onclick="showSection('indicators')">→ السابق</button>
     </div>
   </div>
 </section>
 
-<!-- IMAGE MODAL -->
+<!-- Modals -->
 <div id="img-modal">
   <div class="modal-inner">
-    <img id="modal-img" src="" alt="صورة" />
+    <img src="" alt="">
     <button class="close-btn" onclick="closeImgModal()">✕</button>
   </div>
 </div>
 
-<!-- FOCUS MODAL -->
 <div id="focus-modal">
-  <iframe id="focus-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe src="" frameborder="0" allowfullscreen></iframe>
   <button class="focus-close" onclick="closeFocusModal()">إغلاق</button>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════════════════
-// Section Navigation
-// ═══════════════════════════════════════════════════════════════════
+// ─── SCROLL REVEAL ─── 
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight * 0.75) {
+      el.classList.add('visible');
+    }
+  });
+}
 
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// ─── SECTION NAVIGATION ─── 
 function showSection(sectionId) {
-  const sections = document.querySelectorAll('.content-section');
-  sections.forEach(section => section.classList.remove('active'));
-  
-  const targetSection = document.getElementById(sectionId);
-  if (targetSection) {
-    targetSection.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    updateNavLinks(sectionId);
-  }
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+  window.scrollTo(0, 0);
 }
 
-function updateNavLinks(activeId) {
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(link => link.classList.remove('active'));
-  const activeLink = document.querySelector(`.nav-links a[onclick*="'${activeId}'"]`);
-  if (activeLink) activeLink.classList.add('active');
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// Fullscreen Toggle
-// ═══════════════════════════════════════════════════════════════════
-
-function toggleFS() {
-  const elem = document.documentElement;
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen?.() || elem.mozRequestFullScreen?.() || elem.webkitRequestFullscreen?.() || elem.msRequestFullscreen?.();
-  } else {
-    document.exitFullscreen?.() || document.mozCancelFullScreen?.() || document.webkitExitFullscreen?.() || document.msExitFullscreen?.();
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// Image Modal
-// ═══════════════════════════════════════════════════════════════════
-
+// ─── IMAGE MODAL ─── 
 function openImgModal(card) {
-  const imgSrc = card.querySelector('img')?.src || '';
-  const imgName = card.dataset.name || '';
-  const modal = document.getElementById('img-modal');
-  const modalImg = document.getElementById('modal-img');
-  
-  if (imgSrc) {
-    modalImg.src = imgSrc;
-    modalImg.alt = imgName;
-    modal.classList.add('open');
-  }
+  const imgModal = document.getElementById('img-modal');
+  const img = imgModal.querySelector('img');
+  img.src = card.querySelector('img').src;
+  imgModal.classList.add('open');
 }
 
 function closeImgModal() {
   document.getElementById('img-modal').classList.remove('open');
 }
 
-document.getElementById('img-modal')?.addEventListener('click', function(e) {
-  if (e.target === this) closeImgModal();
-});
-
-// ═══════════════════════════════════════════════════════════════════
-// Focus Modal
-// ═══════════════════════════════════════════════════════════════════
-
-function openFocusModal(url) {
-  const modal = document.getElementById('focus-modal');
-  const iframe = document.getElementById('focus-iframe');
-  iframe.src = url;
-  modal.classList.add('open');
+// ─── FOCUS MODAL ─── 
+function openFocusModal(src) {
+  const focusModal = document.getElementById('focus-modal');
+  focusModal.querySelector('iframe').src = src;
+  focusModal.classList.add('open');
 }
 
 function closeFocusModal() {
-  const modal = document.getElementById('focus-modal');
-  const iframe = document.getElementById('focus-iframe');
-  modal.classList.remove('open');
-  iframe.src = '';
+  const focusModal = document.getElementById('focus-modal');
+  focusModal.classList.remove('open');
+  focusModal.querySelector('iframe').src = '';
 }
 
-// ═══════════════════════════════════════════════════════════════════
-// Video & Presentation Loaders
-// ═══════════════════════════════════════════════════════════════════
-
-function loadVideo(url) {
-  const previewArea = document.getElementById('videoPreview');
-  previewArea.innerHTML = `<iframe width="100%" height="100%" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+// ─── TABS ─── 
+function switchTab(btn, tabId) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  btn.classList.add('active');
+  document.getElementById(tabId).style.display = 'block';
 }
 
-function loadPresentation(url) {
-  const previewArea = document.querySelector('.preview-area');
-  if (previewArea) {
-    previewArea.innerHTML = `<iframe width="100%" height="100%" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+// ─── FULLSCREEN ─── 
+function toggleFS() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => console.log(err));
+  } else {
+    document.exitFullscreen();
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════
-// Tab Navigation
-// ═══════════════════════════════════════════════════════════════════
+// ─── PARTICLES BACKGROUND ─── 
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
 
-function switchTab(btn, tabId) {
-  const tabContents = btn.parentElement.parentElement.querySelectorAll('.tab-content');
-  tabContents.forEach(content => content.style.display = 'none');
-  document.getElementById(tabId).style.display = 'block';
-  
-  const buttons = btn.parentElement.querySelectorAll('.tab-btn');
-  buttons.forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+const particleCount = 30;
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = Math.random() * 0.5 - 0.25;
+    this.speedY = Math.random() * 0.5 - 0.25;
+    this.opacity = Math.random() * 0.5 + 0.2;
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x > canvas.width) this.x = 0;
+    if (this.x < 0) this.x = canvas.width;
+    if (this.y > canvas.height) this.y = 0;
+    if (this.y < 0) this.y = canvas.height;
+  }
+
+  draw() {
+    ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
 }
 
-// ═══════════════════════════════════════════════════════════════════
-// Scroll Reveal Animation
-// ═══════════════════════════════════════════════════════════════════
+function initParticles() {
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+}
 
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -100px 0px'
-};
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let particle of particles) {
+    particle.update();
+    particle.draw();
+  }
+  requestAnimationFrame(animateParticles);
+}
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ═══════════════════════════════════════════════════════════════════
-// Canvas Particles (Optional Enhancement)
-// ═══════════════════════════════════════════════════════════════════
-
-const canvas = document.getElementById('bg-canvas');
-if (canvas) {
-  const ctx = canvas.getContext('2d');
+window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-}
-
-// Prevent default scroll behavior for page loading
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
 });
+
+initParticles();
+animateParticles();
 </script>
 
 </body>
